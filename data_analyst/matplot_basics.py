@@ -99,5 +99,31 @@ plt.pie(count, labels=count.index , autopct="%1.1f%% " ,explode=[0.1,0,0,0,0])
 plt.title("Department Distribution")
 plt.show()
 
+# bar chart
+plt.bar(count.index, count.values, color="orange")
+plt.xlabel("Department")
+plt.ylabel("Count")
+plt.title("Department Count")
+plt.show()
 
+# Multivariate analysis : 3 numerical variables
+
+df1["experience"]=[1,2,3,4,5]
+
+# bubble Plot
+plt.scatter(df1["age"], df1["Salary"], s=df1["experience"]*100, color="cyan", alpha=0.5)
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.title("Age vs Salary with Experience")
+plt.show()
+
+# 2 numerical and 1 categorical variable
+
+plt.scatter(df1["age"], df1["Salary"], color="red")
+for i in range(len(df1)):
+    plt.text(df1["age"][i], df1["Salary"][i], df1["dapartment"][i], fontsize=9, ha="right")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.title("Age vs Salary with Department")
+plt.show()
 
